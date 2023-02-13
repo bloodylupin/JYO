@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+        @apply text-4xl lg:text-5xl
+    }
+
+    h2 {
+        @apply text-3xl lg:text-4xl
+    }
+
+    h3 {
+        @apply text-2xl lg:text-3xl
+    }
+
+    h4 {
+        @apply text-xl lg:text-2xl
+    }
+
+    @font-face {
+        font-family: "Special Elite";
+        src: local("Special Elite"), url('font/elite.ttf');
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Digital-7";
+        src: local("Digital-7"), url('font/digital.ttf');
+        font-display: swap;
+    }
+}
+
+@layer components {
+    header a:not(.active) {
+        @apply grayscale;
+    }
+
+    header a.active {
+        text-shadow: 0 0 3px orange;
+        @apply opacity-75;
+    }
+
+    button {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+@layer utilities {
+    body::-webkit-scrollbar {
+        @apply w-4 h-4
+    }
+
+    body::-webkit-scrollbar-track {
+        @apply bg-gray-400
+    }
+
+    body::-webkit-scrollbar-thumb {
+        @apply bg-gray-700 rounded-full border border-gray-600 transition
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+        @apply bg-gray-900
+    }
+}
