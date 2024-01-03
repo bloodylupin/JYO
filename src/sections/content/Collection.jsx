@@ -22,7 +22,8 @@ export default function Collection({ contract }) {
             try {
                 const idArray = (await contract.tokensOfWallet(account)).map(id => id.toNumber());
                 const tempUri = await contract.tokenURI(1);
-                const uriArray = idArray.map(id => `https://ipfs.io/ipfs/${tempUri.split("/")[2]}/${id}`);
+                // const uriArray = idArray.map(id => `https://ipfs.io/ipfs/${tempUri.split("/")[2]}/${id}`);
+                const uriArray = idArray.map(id => `https://${tempUri.split("/")[2]}.ipfs.nftstorage.link/${id}`);
                 setUri(() => uriArray);
             } catch (err) {
                 console.log(err);
